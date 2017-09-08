@@ -14,17 +14,17 @@ import org.json.JSONObject;
 public class NotificationNotDisplayingExtender extends NotificationExtenderService {
     @Override
     protected boolean onNotificationProcessing(OSNotificationReceivedResult receivedResult) {
-        JSONObject additionalData = receivedResult.payload.additionalData;
-        boolean hidden = false;
-        try {
-            if (additionalData.has(RNOneSignal.HIDDEN_MESSAGE_KEY)) {
-                hidden = additionalData.getBoolean(RNOneSignal.HIDDEN_MESSAGE_KEY);
-            }
-        } catch (JSONException e) {
-            Log.e("OneSignal", "onNotificationProcessing Failure: " + e.getMessage());
-        }
+//         JSONObject additionalData = receivedResult.payload.additionalData;
+//         boolean hidden = false;
+//         try {
+//             if (additionalData.has(RNOneSignal.HIDDEN_MESSAGE_KEY)) {
+//                 hidden = additionalData.getBoolean(RNOneSignal.HIDDEN_MESSAGE_KEY);
+//             }
+//         } catch (JSONException e) {
+//             Log.e("OneSignal", "onNotificationProcessing Failure: " + e.getMessage());
+//         }
 
-        // Return true to stop the notification from displaying.
-        return hidden;
+//         // Return true to stop the notification from displaying.
+        return true;
     }
 }
